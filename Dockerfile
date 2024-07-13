@@ -11,8 +11,6 @@ RUN pip install -r requirements.txt
 # Copy the project files
 COPY . /flaskblog/
 
-# Copy the db
-COPY ./instance/site.db /flaskblog/site.db
 
 # Expose the port that the app runs on
 EXPOSE 5000
