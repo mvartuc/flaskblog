@@ -1,9 +1,7 @@
 services:
   flaskblog:
     volumes:
-      - type: bind
-        source: ${DB_LOCATION}
-        target: /flaskblog/instance/site.db
+      - db:/flaskblog/instance
     build:
       context: .
       args:
@@ -22,3 +20,5 @@ services:
       FLASK_APP: ${FLASK_APP}
       SECRET_KEY: ${SECRET_KEY}
       SQLALCHEMY_DATABASE_URI: ${SQLALCHEMY_DATABASE_URI}
+volumes:
+  db:
