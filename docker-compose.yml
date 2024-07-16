@@ -1,6 +1,10 @@
 services:
   flaskblog:
-    build: 
+    volumes:
+      - type: bind
+        source: ${PWD}/db/site.db
+        target: /app/flaskblog/instance/site.db
+    build:
       context: .
       args:
         - EMAIL_PASS=${EMAIL_PASS}
