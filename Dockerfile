@@ -1,5 +1,9 @@
 # Use the official Python image from the Docker Hub
 FROM python:3.9-slim-buster
+# Install prerequisites
+RUN apt-get update && apt-get install -y \
+    curl
+
 
 # Set the working directory
 WORKDIR /flaskblog
