@@ -2,7 +2,7 @@ services:
   flaskblog:
     volumes:
       - type: bind
-        source: /data/coolify/applications/kw40gw4/db/site.db
+        source: ${DB_LOCATION}
         target: /flaskblog/instance/site.db
     build:
       context: .
