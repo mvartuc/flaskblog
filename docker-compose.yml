@@ -2,7 +2,7 @@ services:
   flaskblog:
     volumes:
       - type: bind
-        source: ${DB_LOCATION}
+        source: /mnt/hdd-share/project-data/flaskblog/db/site.db
         target: /flaskblog/instance/site.db
     build:
       context: .
