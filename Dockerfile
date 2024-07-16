@@ -6,9 +6,22 @@ RUN apt-get update && apt-get install -y \
     wget
 
 
+# Set the env argument variables
+ARG FLASK_APP
+ARG EMAIL_PASS
+ARG EMAIL_USER
+ARG SECRET_KEY
+ARG SQLALCHEMY_DATABASE_URI
+
+# Set the environment variables
+ENV FLASK_APP ${FLASK_APP}
+ENV EMAIL_PASS ${EMAIL_PASS}
+ENV EMAIL_USER ${EMAIL_USER}
+ENV SECRET_KEY ${SECRET_KEY}
+ENV SQLALCHEMY_DATABASE_URI ${SQLALCHEMY_DATABASE_URI}
+
 # Set the working directory
 WORKDIR /flaskblog
-
 
 # Copy the project files
 COPY . /flaskblog/
