@@ -12,7 +12,7 @@ COPY . /flaskblog/
 RUN pip install -r requirements.txt
 
 # Expose the port that the app runs on
-EXPOSE 8000
+EXPOSE 3000
 
 # Define the command to run the application
 CMD ["flask", "run", "--host=0.0.0.0", "--port=3000"]
